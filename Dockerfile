@@ -10,3 +10,6 @@ RUN mkdir Desktop \
 && echo "test" > ./Desktop/demo.txt
 
 CMD ["bash"]
+
+#To build the image type: docker build -t ubuntultx .
+#To run a container type: docker run -it --rm -p 6080:80 -p 5900:5900 ubuntultx
