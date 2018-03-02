@@ -1,0 +1,4 @@
+vi Dockerfile
+Press Insert to be able to type
+When finished, press Escape and then :x
+docker build -t firstscenario .

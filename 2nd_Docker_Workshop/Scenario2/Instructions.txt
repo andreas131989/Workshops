@@ -1,0 +1,4 @@
+docker pull dorowu/ubuntu-desktop-lxde-vnc
+docker run -it --rm -p 6081:80 dorowu/ubuntu-desktop-lxde-vnc
+docker inspect <container>, <image>
+docker stop/kill/start, rm 

@@ -1,0 +1,2 @@
+docker pull andreas131989/workshops
+docker run -it --rm -p 6080:80 andreas131989/workshops
