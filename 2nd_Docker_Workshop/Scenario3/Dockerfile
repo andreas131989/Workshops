@@ -13,3 +13,4 @@ CMD ["bash"]
 
 #To build the image type: docker build -t ubuntultx .
 #To run a container type: docker run -it --rm -p 6080:80 ubuntultx
+#Play!
