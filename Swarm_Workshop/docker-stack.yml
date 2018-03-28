@@ -1,0 +1,40 @@
+version: "3"
+services:
+  web:
+    image: andreas131989/workshops:swarmdemo
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+
+  portainer:
+    image: portainer/portainer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9000:9000"
+    networks:
+      - webnet
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "/home/docker/data:/data"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server --appendonly yes
+    networks:
+      - webnet
+
+networks:
+  webnet:
